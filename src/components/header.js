@@ -3,8 +3,8 @@ import PropTypes from "prop-types"
 import React from "react"
 import '../style/components/_header.scss'
 
-const Header = ({ siteTitle, toggleNav, setToggleNav }) => {
-  // const [toggleNav, setToggleNav] = React.useState(false);
+const Header = ({ siteTitle }) => {
+  const [toggleNav, setToggleNav] = React.useState(false);
   return (
   <div className={`site-wrapper ${toggleNav ? `header-open` : ``}`}>
     <header className="header">
