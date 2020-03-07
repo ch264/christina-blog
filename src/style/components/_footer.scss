@@ -1,0 +1,15 @@
+@import '../variables';
+
+.site-foot {
+  margin: 3vw 0 1vw;
+  text-align: center;
+  color: color(#{$color-border} l(-20%));
+  font-size: 1.4rem;
+}
+
+.site-foot a {
+  color: $color-body-font;
+  @include light-mode {
+    color: $color-body-font-light;
+  }
+}
