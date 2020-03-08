@@ -7,24 +7,40 @@ import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 
 const BlogIndex = ({data}) => {
-  // console.log(data)
   const posts = data.allMarkdownRemark.edges;
-  console.log(data.allMarkdownRemark)
+  const siteTitel = data.site.siteMetadata.title
   return (
     <Layout>
-      <SEO title="Home" keywords={[`devlog`, `blog`, `gatsby`, `javascript`, `react`]} />
+      <SEO title={siteTitel} keywords={[`devlog`, `blog`, `gatsby`, `javascript`, `react`]} />
       <h1>Welcome to my Blog</h1>
+      <div>
+        {posts.map(({node}) => { 
+          return(
+            <a href={node.fields.slug}>{node.fields.slug}</a>
+            )
+          })
+        }
+      </div>
     </Layout>
   )
 };
 
-
-const data = graphql`
+// export query for BlogIndex to see it
+export const indexQuery = graphql`
   query {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt
+          fields {
+            slug
+          }
           frontmatter {
             date(formatString: "MMMM D, YYYY")
             title

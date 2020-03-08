@@ -1,7 +1,11 @@
+// Join all arguments together and normalize the resulting url
+// const urljoin = require("url-join")
+
 module.exports = {
   siteMetadata: {
     title: `Christina's Blog`,
     description: `This is my blog to share what I learn and discover.`,
+    siteUrl: `https://www.christinahastenrath.com`,
     author: `Christina Hastenrath`,
   },
   plugins: [

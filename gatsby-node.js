@@ -1,20 +1,13 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-
 const path = require(`path`)
 const _ = require('lodash');
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = ({ graphql, actions}) => {
-	const { createPages } = actions;
+	const { createPage } = actions;
 
-	const blogPost = path.resolve(`./src/templates/blog-post.jsx`);
+	const blogPost = path.resolve(`./src/templates/Blog-post.jsx`);
 	// const tagPage = path.resolve(`./src/templates/tag-page.jsx`);
-	return graphql(
-    `
+	return graphql(`
       {
         allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: DESC }
@@ -32,8 +25,7 @@ exports.createPages = ({ graphql, actions}) => {
           }
         }
       }
-		`
-	).then(result => {
+		`).then(result => {
 		if (result.errors) {
       throw result.errors
     }
@@ -41,12 +33,16 @@ exports.createPages = ({ graphql, actions}) => {
 		const posts = result.data.allMarkdownRemark.edges;
 		// const tagSet = new Set();
 
-		createPages({
-			path: posts.node.fields.slug,
-			component: blogPost,
-			context: {
-				slug: posts.node.fields.slug,
-			}
+
+		posts.forEach((post) => {
+		
+			createPage({
+				path: post.node.fields.slug,
+				component: blogPost,
+				context: {
+					slug: post.node.fields.slug,
+				}
+			})
 		})
 	})
 }
