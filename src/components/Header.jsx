@@ -30,13 +30,13 @@ const Header = ({ siteTitle }) => {
         <nav id="swup" className="header-left">
           <ul className="nav" role="menu">
             <li className="nav-home" role="menuitem">
-              <Link to={`/about`}>Home</Link>
+              <Link to={`/`}>Home</Link>
             </li>
             <li className="nav-about" role="menuitem">
               <Link to={`/about`}>About</Link>
             </li>
             <li className="nav-tags" role="menuitem">
-              <Link to={`/about`}>Tags</Link>
+              <Link to={`/tags`}>Tags</Link>
             </li>
           </ul>
         </nav>
