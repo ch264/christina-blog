@@ -1,19 +1,38 @@
+// Join all arguments together and normalize the resulting url
+// const urljoin = require("url-join")
+
 module.exports = {
   siteMetadata: {
     title: `Christina's Blog`,
     description: `This is my blog to share what I learn and discover.`,
+    siteUrl: `https://www.christinahastenrath.com`,
     author: `Christina Hastenrath`,
   },
   plugins: [
     'gatsby-plugin-sass',
     `gatsby-plugin-react-helmet`,
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `images`,
+    //     path: `${__dirname}/src/images`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `blog`,
+        path: `${__dirname}/content/blog`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/assets`,
+        name: `assets`,
+      },
+    },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
