@@ -1,5 +1,6 @@
 // Join all arguments together and normalize the resulting url
-// const urljoin = require("url-join")
+const urljoin = require("url-join")
+// const siteConfig = require("./siteConfig")
 
 module.exports = {
   siteMetadata: {
@@ -11,13 +12,6 @@ module.exports = {
   plugins: [
     'gatsby-plugin-sass',
     `gatsby-plugin-react-helmet`,
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `images`,
-    //     path: `${__dirname}/src/images`,
-    //   },
-    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -32,9 +26,22 @@ module.exports = {
         name: `assets`,
       },
     },
+    `gatsby-remark-copy-linked-files`,
+    `gatsby-remark-smartypants`,
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [
+          require("postcss-easy-import")(),
+          require("postcss-custom-properties")({ preserve: false }),
+          require("postcss-color-function")(),
+          require("autoprefixer")({ browserlist: ["last 2 versions"] }),
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -49,6 +56,6 @@ module.exports = {
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }
