@@ -1,3 +1,5 @@
+@import '../mixins';
+
 /* https://github.com/jonsuh/hamburgers */
 .hamburger {
 	display: flex;
@@ -36,9 +38,9 @@
 	background-color: $color-body-font;
 	border-radius: 4px;
 	transition: transform 0.15s ease;
-	// @include light-mode {
-	// 	background-color: $color-body-font-light;
-	// }
+	@include light-mode {
+		background-color: $color-body-font-light;
+	}
 }
 .hamburger-inner::before,
 .hamburger-inner::after {
@@ -88,10 +90,10 @@ padding: 0 0 3px 5px;
 .header-open .hamburger-inner::after {
 	background-color: $color-body-font;
 	color: $color-body-font;
-	// @include light-mode {
-	// 	background-color: $color-body-font-light-2;
-	// 	color: $color-body-font-light;
-	// }
+	@include light-mode {
+		background-color: $color-body-font-light-2;
+		color: $color-body-font-light;
+	}
 }
 
 .header-open .hamburger-inner {

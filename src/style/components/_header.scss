@@ -1,5 +1,6 @@
 @import '../variables';
 @import './_hamburger.scss';
+@import '../mixins.scss';
 
 /* Site Navigation
 /* ---------------------------------------------------------- */
@@ -80,9 +81,9 @@
 	text-overflow: ellipsis;
 	
 	// mixin - do we want this? 
-  // @include light-mode {
-  //   color: $color-body-font-light;
-  // }
+  @include light-mode {
+    color: $color-body-font-light;
+  }
 }
 
 .header-logo:hover {
