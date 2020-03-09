@@ -1,9 +1,9 @@
 import React from "react"
-// import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import "../style/_all.scss"
 
 import Layout from "../components/Layout"
-// import Image from "../components/image"
+// import Img from "../components/image"
 import SEO from "../components/Seo"
 
 const BlogIndex = ({data}) => {
@@ -21,6 +21,7 @@ const BlogIndex = ({data}) => {
           })
         }
       </div>
+
     </Layout>
   )
 };
@@ -45,7 +46,13 @@ export const indexQuery = graphql`
             date(formatString: "MMMM D, YYYY")
             title
             description
-            thumbnail 
+            thumbnail {
+              childImageSharp {
+                fluid(maxWidth: 1360) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
