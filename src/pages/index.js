@@ -5,14 +5,24 @@ import "../style/_all.scss"
 import Layout from "../components/Layout"
 // import Img from "../components/image"
 import SEO from "../components/Seo"
+import "../style/_all.scss"
 
 const BlogIndex = ({data}) => {
   const posts = data.allMarkdownRemark.edges;
-  const siteTitel = data.site.siteMetadata.title
+  const { siteTitel, description } = data.site.siteMetadata
   return (
     <Layout>
       <SEO title={siteTitel} keywords={[`devlog`, `blog`, `gatsby`, `javascript`, `react`]} />
-      <h1>Welcome to my Blog</h1>
+      {/* <Bio /> */}
+
+      {description && (
+        <header className="page-head">
+          <h2 className="page-head-title">
+            {description}
+          </h2>
+        </header>
+      )}
+
       <div>
         {posts.map(({node}) => { 
           return(
