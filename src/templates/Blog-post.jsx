@@ -9,23 +9,32 @@ class BlogPostTemplate extends React.Component {
 	render() {
 		const post = this.props.data.markdownRemark;
 		const siteTitel = this.props.data.markdownRemark.title;
-		const title = post.frontmatter.title
+		const { title, thumbnail, description } = post.frontmatter;
+
 
 		return (
 			<Layout title={siteTitel}>
-				<SEO title={"hi"}/>
-				<article>
-					<h1>This is the first blog post Title: {title}</h1>
+				<SEO 
+					title={"hi"} 
+					description={post.frontmatter.description || post.excerpt}
+				/>
+				<article
+					className={`post-content ${thumbnail || `no-image`}`}
+				>
+					<header className="post-content-header">
+            <h1 className="post-content-title">{title}</h1>
+          </header>
 
-					{post.frontmatter.description && (
-            <p className="post-content-excerpt">{post.frontmatter.description}</p>
+					{description && (
+            <p className="post-content-excerpt">{description}</p>
           )}
 
-					{post.frontmatter.thumbnail && (
+					{thumbnail && (
             <div className="post-content-image">
               <Img
-                alt={post.frontmatter.title}
-								fluid={post.frontmatter.thumbnail.childImageSharp.fluid}
+								className="kg-image"
+                alt={title}
+								fluid={thumbnail.childImageSharp.fluid}
               />
             </div>
           )}
