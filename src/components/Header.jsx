@@ -6,7 +6,7 @@ import '../style/components/_header.scss'
 const Header = ({ siteTitle }) => {
   const [toggleNav, setToggleNav] = React.useState(false);
   return (
-  <div className={`site-wrapper ${toggleNav ? `header-open` : ``}`}>
+  <div className={` ${toggleNav ? `header-open` : ``}`}>
     <header className="header">
       <div id="menu" className="header-container">
         <a

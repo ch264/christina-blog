@@ -5,14 +5,19 @@ import "../style/_all.scss"
 import Layout from "../components/Layout"
 // import Img from "../components/image"
 import SEO from "../components/Seo"
+import PostCard from "../components/postCard"
+
+import "../style/normalize.css"
 import "../style/_all.scss"
 
 const BlogIndex = ({data}) => {
   const posts = data.allMarkdownRemark.edges;
-  const { siteTitel, description } = data.site.siteMetadata
+  const { description } = data.site.siteMetadata;
+  let postCounter = 0;
+  
   return (
     <Layout>
-      <SEO title={siteTitel} keywords={[`devlog`, `blog`, `gatsby`, `javascript`, `react`]} />
+      <SEO title="site-Title {siteTitle}" keywords={[`devlog`, `blog`, `gatsby`, `javascript`, `react`]} />
       {/* <Bio /> */}
 
       {description && (
@@ -23,15 +28,21 @@ const BlogIndex = ({data}) => {
         </header>
       )}
 
-      <div>
-        {posts.map(({node}) => { 
-          return(
-            <a href={node.fields.slug}>{node.fields.slug}</a>
+      <div className="post-feed">
+        { posts.map(({ node }) => { 
+          postCounter++
+          const slug = node.fields.slug;
+          return (
+            <div>
+            <PostCard key={slug}
+              count={postCounter}
+              node={node}
+              postClass={`post`} />
+            </div>
             )
           })
         }
-      </div>
-
+        </div>
     </Layout>
   )
 };
@@ -56,6 +67,7 @@ export const indexQuery = graphql`
             date(formatString: "MMMM D, YYYY")
             title
             description
+            tags
             thumbnail {
               childImageSharp {
                 fluid(maxWidth: 1360) {
