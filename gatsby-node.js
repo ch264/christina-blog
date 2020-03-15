@@ -6,7 +6,7 @@ exports.createPages = ({ graphql, actions}) => {
 	const { createPage } = actions;
 
 	const blogPost = path.resolve(`./src/templates/Blog-post.jsx`);
-	// const tagPage = path.resolve(`./src/templates/tag-page.jsx`);
+	const tagPage = path.resolve(`./src/templates/tag-template.jsx`);
 	return graphql(`
       {
         allMarkdownRemark(
@@ -19,7 +19,8 @@ exports.createPages = ({ graphql, actions}) => {
                 slug
               }
               frontmatter {
-                title
+								title
+								tags
               }
             }
           }
@@ -31,19 +32,45 @@ exports.createPages = ({ graphql, actions}) => {
     }
 		// create blog post
 		const posts = result.data.allMarkdownRemark.edges;
-		// const tagSet = new Set();
+		// create tags
+		const tagSet = new Set();
 
 
-		posts.forEach((post) => {
-		
+		posts.forEach((post, index) => {
+			const previous = index === posts.length - 1 ? null : posts[index + 1].node;
+			const next = index === 0 ? null : posts[index - 1].node; 
+
+			// Get tags for tags pages
+			if (post.node.frontmatter.tags) {
+				post.node.frontmatter.tags.forEach(tag => {
+					tagSet.add(tag);
+				});
+			}
+
 			createPage({
 				path: post.node.fields.slug,
 				component: blogPost,
 				context: {
 					slug: post.node.fields.slug,
+					previous,
+					next
 				}
 			})
 		})
+
+		// Create Tag pages
+		tagSet.forEach(tag => {
+			createPage({
+				path: `/tags/${_.kebabCase(tag)}/`,
+				component: tagPage,
+				context: {
+					tag
+				}
+			});
+		});
+
+
+		return null;
 	})
 }
 

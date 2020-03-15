@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
 //   const { title, children } = props;
 //   console.log(props)
   return (
-    <div>
+    <div className="site-wrapper">
       <Header siteTitle={data.site.siteMetadata.title} />
       {/* <Header siteTitle={title} /> */}
       
