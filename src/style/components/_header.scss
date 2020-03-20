@@ -49,9 +49,9 @@
   color: $color-body-font;
   font-weight: 600;
   opacity: 0.6;
-  // @include light-mode {
-  //   color: $color-body-font-light;
-  // }
+  @include light-mode {
+    color: $color-body-font-light;
+  }
 }
 
 .nav-current a,
@@ -226,9 +226,9 @@
     transition-delay: 0.25;
     overflow: hidden;
     height: 100vh;
-    // @include light-mode {
-    //   background: $color-bg-light;
-    // }
+    @include light-mode {
+      background: $color-bg-light;
+    }
   }
 
   .header-open .header-container {
@@ -252,9 +252,9 @@
   }
   .header-open .nav-current a {
     border-bottom: $color-base 2px solid;
-    // @include light-mode {
-    //   border-bottom: $color-base-light 2px solid;
-    // }
+    @include light-mode {
+      border-bottom: $color-base-light 2px solid;
+    }
   }
   .header-open .header-right a {
     opacity: 0.8;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import SEO from '../components/Seo';
+import SEO from '../components/SEO';
 import Img from "gatsby-image"
 
 
@@ -74,14 +74,16 @@ export const blogPageQuery = graphql`
 				title
 				date(formatString: "MMMM DD, YYYY")
 				description
-				thumbnail {
-					childImageSharp {
-						fluid(maxWidth: 1360) {
-							...GatsbyImageSharpFluid
-						}
-					}
-				}
+				thumbnail 
 			}
 		}
 	}
 `
+
+// {
+// 	childImageSharp {
+// 		fluid(maxWidth: 1360) {
+// 			...GatsbyImageSharpFluid
+// 		}
+// 	}
+// }

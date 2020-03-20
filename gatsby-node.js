@@ -7,6 +7,7 @@ exports.createPages = ({ graphql, actions}) => {
 
 	const blogPost = path.resolve(`./src/templates/Blog-post.jsx`);
 	const tagPage = path.resolve(`./src/templates/tag-template.jsx`);
+	
 	return graphql(`
       {
         allMarkdownRemark(
@@ -68,7 +69,6 @@ exports.createPages = ({ graphql, actions}) => {
 				}
 			});
 		});
-
 
 		return null;
 	})
