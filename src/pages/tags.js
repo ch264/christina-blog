@@ -1,12 +1,12 @@
 import React from 'react'; 
 import _ from 'lodash';
 import { Link } from 'gatsby';
-import { graphql, StaticQuery } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import SEO from '../components/Seo';
+import SEO from '../components/SEO';
 
-import '../style/normalize.css';
+// import '../style/normalize.css';
 import '../style/_all.scss';
 
 const TagIndex = ({ data }) => {
@@ -15,12 +15,21 @@ const TagIndex = ({ data }) => {
 
 	return (
 		<Layout title={siteTitle}>
-			{console.log('props in tags', data)}
+			{console.log('props in tags page ............', data)}
 			<SEO title={"Tags"} />
+			<header className="tag-page-head">
+				
+				<h1 className="page-head-title">
+					{/* Tags({tags.length}) */}
+					Tags Page
+				</h1>
+			</header>
+			<h1>HI this is the tags page</h1>
+
 			<div className="tag-container">
-				{tags.map(tag => {
+				{tags.map((tag) => {
 					return(
-						<Link to={`/tags/${_.kebabCase(tag)}`} key={tag} style={{textDecoration: "none"}}>
+						<Link to={`/tags/${_.kebabCase(tag)}`} key={tag}>
 							<div className="tag-item">#{tag}</div>
 						</Link>
 					)
@@ -30,7 +39,8 @@ const TagIndex = ({ data }) => {
 	)
 }
 
-const tagQuery = graphql`
+
+export const tagQuery = graphql`
 	query {
 		site {
 			siteMetadata {
@@ -38,16 +48,8 @@ const tagQuery = graphql`
 			}
 		}
 		allMarkdownRemark {
-			distinct(field: frontmatter___tags)
+			distinct(field: frontmatter___tags )
 		}
 	}
 `
-
-export default props => (
-	<StaticQuery
-		query={tagQuery}
-		render={data => (
-			<TagIndex props data={data} /> 
-		)}
-	/>
-)
+export default TagIndex;

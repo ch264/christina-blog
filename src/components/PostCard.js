@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import Tags from "./Tag"
 
 export default props => (
-	<article className={`post-card ${props.count % 3 === 0 && `post-card-large`} ${props.postClass} ${props.node.frontmatter.thumbnail ? `with-image` : `no-image`}`} style={props.node.frontmatter.thumbnail && {backgroundImage: `url(${props.node.frontmatter.thumbnail.childImageSharp.fluid.src})`,
+	<article className={`post-card ${props.count % 3 === 0 && `post-card-large`} ${props.postClass} ${props.node.frontmatter.thumbnail ? `with-image` : `no-image`}`} info={props.node.frontmatter.thumbnail && {backgroundImage: `url(${props.node.frontmatter.thumbnail})`,
 		}
 	}
 	>
@@ -41,7 +41,7 @@ class ContentNoImage extends Component {
 
 			{/* title */}
 				<div>
-					<Link to={props.node.field.slug} className="post-card-link">
+					<Link to={props.node.fields.slug} className="post-card-link">
 						<h2 className="post-card-title">{props.node.frontmatter.title || props.node.fields.slug}</h2>
 					</Link>
 				</div>

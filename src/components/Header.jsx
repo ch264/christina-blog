@@ -29,13 +29,13 @@ const Header = ({ siteTitle }) => {
 
         <nav id="swup" className="header-left">
           <ul className="nav" role="menu">
-            <li className="nav-home" role="menuitem">
+            <li className="nav-link" role="menuitem">
               <Link to={`/`}>Home</Link>
             </li>
-            <li className="nav-about" role="menuitem">
+            <li className="nav-link" role="menuitem">
               <Link to={`/about`}>About</Link>
             </li>
-            <li className="nav-tags" role="menuitem">
+            <li className="nav-link" role="menuitem">
               <Link to={`/tags`}>Tags</Link>
             </li>
           </ul>
@@ -74,7 +74,7 @@ const Header = ({ siteTitle }) => {
             RSS
           </Link>
           <a
-            href="https://github.com/jooplaan/gatsby-london-night-and-day"
+            href="https://github.com/ch264/christina-blog"
             title="GitHub"
             target="_blank"
             rel="noopener noreferrer"
@@ -88,12 +88,14 @@ const Header = ({ siteTitle }) => {
   </div>
 )};
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+// Header.propTypes = {
+//   siteTitle: PropTypes.string,
+// }
 
+// Header.defaultProps = {
+//   siteTitle: ``,
+// }
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: PropTypes.string
 }
-
 export default Header

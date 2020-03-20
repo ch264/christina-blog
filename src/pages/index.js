@@ -4,8 +4,8 @@ import "../style/_all.scss"
 
 import Layout from "../components/Layout"
 // import Img from "../components/image"
-import SEO from "../components/Seo"
-import PostCard from "../components/postCard"
+import SEO from "../components/SEO"
+import PostCard from "../components/PostCard"
 
 import "../style/normalize.css"
 import "../style/_all.scss"
@@ -68,19 +68,19 @@ export const indexQuery = graphql`
             title
             description
             tags
-            thumbnail {
-              childImageSharp {
-                fluid(maxWidth: 1360) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            thumbnail 
           }
         }
       }
     }
   }
 `
+
+// childImageSharp {
+//   fluid(maxWidth: 1360) {
+//     ...GatsbyImageSharpFluid
+//   }
+// }
 // query {
 //   allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
 //     edges {
