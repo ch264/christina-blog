@@ -44,9 +44,9 @@
 .site-head-left a,
 .site-head-right a {
   display: block;
-  margin: 0;
+  // margin: 0;
   padding: 10px 12px;
-  color: $color-body-font;
+  color: $header-link;
   font-weight: 600;
   opacity: 0.6;
   @include light-mode {

@@ -34,10 +34,12 @@ const BlogIndex = ({data}) => {
           const slug = node.fields.slug;
           return (
             <div>
-            <PostCard key={slug}
-              count={postCounter}
-              node={node}
-              postClass={`post`} />
+              <PostCard 
+                key={slug}
+                count={postCounter}
+                node={node}
+                postClass={`post`} 
+                />
             </div>
             )
           })

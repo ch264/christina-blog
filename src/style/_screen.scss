@@ -26,7 +26,7 @@
 /* ---------------------------------------------------------- */
 
 body {
-  font-family: $font-sans-serif;
+  font-family: $font-muli;
   background: $color-bg;
   transition: background 0.3s ease-out;
   transition-delay: 0.25;
@@ -181,10 +181,13 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  color: $color-body-font;
+  color: $color-bg;
+  text-decoration: none;
   background: rgba(0, 0, 0, 0.1);
   opacity: 1;
   transition: opacity 0.5s cubic-bezier(0.33, 0, 0.2, 1);
+
+  text-decoration: none;
 }
 
 .post-card-date,
@@ -210,6 +213,7 @@ body {
 
 .post-card.with-image .post-card-content {
   opacity: 0;
+  padding: 100px 20px;
 }
 @media (max-width: 700px) {
   .post-card.with-image .post-card-content {
@@ -223,10 +227,11 @@ body {
 }
 
 .post-card-title {
+  color: pink;
   margin: 0;
   display: inline-block;
   font-size: 3.4rem;
-  /* max-width: 70%; */
+  // max-width: 70%; 
   text-align: center;
   transition: all 0.3s cubic-bezier(0.33, 0, 0.2, 1);
 }
@@ -257,7 +262,7 @@ body {
   font-size: 5rem;
   line-height: 1.15em;
   text-align: left;
-  color: $color-body-font;
+  color: $color-bg;
 }
 
 .post-card.no-image:hover .post-card-title {
@@ -570,6 +575,7 @@ body {
   color: $color-bg-bright;
   background-color: $color-sub-base;
   transition: all 0.4s ease-out;
+
   @include light-mode {
     color: $color-bg-bright-light;
     background-color: $color-sub-base-light;

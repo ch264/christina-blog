@@ -84,6 +84,7 @@ video {
     font: inherit;
     font-size: 100%;
     vertical-align: baseline;
+    text-decoration: none;
 }
 body {
     line-height: 1;
@@ -343,7 +344,7 @@ blockquote cite a {
 }
 
 a {
-    color: $link-color;
+    // color: $link-color;
     text-decoration: none;
     transition: 0.4s ease;
     @include light-mode {
