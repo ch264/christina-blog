@@ -8,12 +8,16 @@
 /* Fonts */
 $font-sans-serif: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 $font-serif: 'New York', serif;
-$font-muli: 'Muli', serif;
+$font-muli: 'Muli', sans-serif;
 $font-mono: monospace;
 $font-light: 100;
 $font-normal: 400;
 $font-bold: 700;
 $font-heavy: 800;
+
+// font-family: 'Muli', sans-serif;
+// font-family: 'Roboto', sans-serif;
+
 
 /* Breakpoints */
 $xlarge: 1680px;

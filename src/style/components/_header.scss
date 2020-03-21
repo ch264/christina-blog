@@ -37,12 +37,12 @@
 
 .header li {
   display: block;
-  margin: 0;
-  padding: 0;
+  // margin: 0;
+  // padding: 0;
 }
 
-.site-head-left a,
-.site-head-right a {
+.header-left a,
+.header-right a {
   display: block;
   // margin: 0;
   padding: 10px 12px;
@@ -58,6 +58,7 @@
 .header a:hover {
   text-decoration: none;
   opacity: 1;
+  color: $color-body-font;
 }
 
 .header-center {
@@ -90,7 +91,7 @@
   text-decoration: none;
 }
 
-.site-head-logo img {
+.header-logo img {
   display: block;
   margin-top: 2px;
   width: auto;
@@ -105,7 +106,7 @@
   align-items: center;
 }
 
-.social-links {
+.social-link {
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -215,9 +216,12 @@
     width: 100%;
     margin-top: 3vw;
   }
-  .social-links {
+  .social-link {
     flex-direction: column;
     align-items: flex-start;
+    a {
+
+    }
   }
 
   .header-open {
