@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import Img from "gatsby-image"
+import Img from "gatsby-image";
 
 
 class BlogPostTemplate extends React.Component {
@@ -74,7 +74,13 @@ export const blogPageQuery = graphql`
 				title
 				date(formatString: "MMMM DD, YYYY")
 				description
-				thumbnail 
+				thumbnail {
+          childImageSharp {
+            fluid(maxWidth: 1360) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
 			}
 		}
 	}

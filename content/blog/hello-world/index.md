@@ -1,8 +1,8 @@
 ---
-title: GitHub Actions Markdown lint Setup
+title: "GitHub Actions Markdown lint Setup"
 date: "2019-10-29"
-thumbnail: ../assets/paper-bird.jpeg
-description: This is a tutorial to show you how I set up GitHub Actions for Markdown linting with David Ansons’s Markdownlint library.
+thumbnail: "./paper-bird.jpeg"
+description: "This is a tutorial to show you how I set up GitHub Actions for Markdown linting with David Ansons’s Markdownlint library."
 tags: [pink,color]
 
 ---

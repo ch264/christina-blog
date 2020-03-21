@@ -2,16 +2,19 @@ import React, { Component } from "react";
 import { Link } from "gatsby"
 import Tags from "./Tag"
 
-export default props => (
+export default props => {
+	console.log('postcard props', props)
+	return (
 	<article className={`post-card ${props.count % 3 === 0 && `post-card-large`} ${props.postClass} ${props.node.frontmatter.thumbnail ? `with-image` : `no-image`}`} info={props.node.frontmatter.thumbnail && {backgroundImage: `url(${props.node.frontmatter.thumbnail})`,
 		}
 	}
+
 	>
 		{
 			props.node.frontmatter.thumbnail ? (<ContentWithImage props={props}/>) : (<ContentNoImage props={props}/>)	
 		}
 	</article>
-)
+)}
 
 
 // export default props => (

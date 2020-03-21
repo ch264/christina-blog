@@ -70,7 +70,13 @@ export const indexQuery = graphql`
             title
             description
             tags
-            thumbnail 
+            thumbnail {
+              childImageSharp {
+                fluid(maxWidth: 1360) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
@@ -78,11 +84,7 @@ export const indexQuery = graphql`
   }
 `
 
-// childImageSharp {
-//   fluid(maxWidth: 1360) {
-//     ...GatsbyImageSharpFluid
-//   }
-// }
+
 // query {
 //   allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
 //     edges {
