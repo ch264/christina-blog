@@ -61,7 +61,9 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,600,700,700i,800|Roboto:400,400i,700,700i,900&display=swap" rel="stylesheet"></link>
+    </Helmet>
   )
 }
 
