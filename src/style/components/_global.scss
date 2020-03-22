@@ -345,16 +345,16 @@ blockquote cite a {
 
 a {
     // color: $link-color;
-    text-decoration: none;
+    // text-decoration: none !important;
     transition: 0.4s ease;
     @include light-mode {
-    	color: $link-color-light;
+        color: $link-color-light;
   }
 }
 
 a:hover {
-    text-decoration: underline;
-    text-decoration-color: $color-bg;
+    // text-decoration: underline;
+    // text-decoration-color: $color-bg;
     transition: 0.1s ease;
 }
 

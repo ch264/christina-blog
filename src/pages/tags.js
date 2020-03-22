@@ -6,7 +6,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
-// import '../style/normalize.css';
+import '../style/normalize.css';
 import '../style/_all.scss';
 
 const TagIndex = ({ data }) => {
@@ -15,7 +15,6 @@ const TagIndex = ({ data }) => {
 
 	return (
 		<Layout title={siteTitle}>
-			{console.log('props in tags page ............', data)}
 			<SEO title={"Tags"} />
 			<header className="tag-page-head">
 				
@@ -24,7 +23,6 @@ const TagIndex = ({ data }) => {
 					Tags Page
 				</h1>
 			</header>
-			<h1>HI this is the tags page</h1>
 
 			<div className="tag-container">
 				{tags.map((tag) => {

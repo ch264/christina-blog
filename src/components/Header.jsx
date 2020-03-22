@@ -50,20 +50,28 @@ const Header = ({ siteTitle }) => {
         <div className="header-right">
           <div className="social-link">
           <a
-            href="https://www.facebook.com"
-            title="Facebook"
+            href="https://www.linkedin.com/in/christinahastenrath/"
+            title="LinkedIn"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Facebook
+            LinkedIn
           </a>
           <a
-            href="https://twitter.com"
+            href="https://twitter.com/etTinchen"
             title="Twitter"
             target="_blank"
             rel="noopener noreferrer"
           >
             Twitter
+          </a>
+          <a
+            href="https://www.instagram.com/ta_teki/"
+            title="Twitter"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
           </a>
           {/* <Link
             to={`/rss.xml`}

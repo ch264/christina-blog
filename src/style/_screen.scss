@@ -28,8 +28,9 @@
 body {
   font-family: $font-muli;
   background: $color-bg;
-  transition: background 0.3s ease-out;
-  transition-delay: 0.25;
+  // transition: background 0.3s ease-out;
+  // transition-delay: 0.25;
+
   @include light-mode {
     background: $color-bg-light;
     color: $color-base-light-inverted;
@@ -187,8 +188,6 @@ body {
   background: rgba(0, 0, 0, 0.1);
   opacity: 1;
   transition: opacity 0.5s cubic-bezier(0.33, 0, 0.2, 1);
-
-  text-decoration: none;
 }
 
 .post-card-date,
@@ -224,10 +223,11 @@ body {
 }
 
 // on hover make darker background
-// .post-card-link:hover .post-card-content {
-//   opacity: 1;
-//   transition: opacity 0.3s cubic-bezier(0.33, 0, 0.2, 1);
-// }
+.post-card-link:hover .post-card-content {
+  text-decoration: underline;
+  opacity: 1;
+  transition: opacity 0.3s cubic-bezier(0.33, 0, 0.2, 1);
+}
 
 .post-card-title {
   color: $color-bg;
@@ -563,8 +563,8 @@ body {
   flex: 1 1 auto;
   margin: 0.7vw;
   padding: 0.5vw;
-  background-color: $color-bg-bright;
-  color: $color-sub-base;
+  background-color: $color-border-light;
+  color: $color-bg;
   font-size: 2rem;
   line-height: 1em;
   white-space: nowrap;
@@ -575,9 +575,10 @@ body {
 }
 
 .tag-item:hover {
-  color: $color-bg-bright;
-  background-color: $color-sub-base;
+  // color: $color-bg-bright;
+  background-color: $color-sub-base-light;
   transition: all 0.4s ease-out;
+  
 
   @include light-mode {
     color: $color-bg-bright-light;
