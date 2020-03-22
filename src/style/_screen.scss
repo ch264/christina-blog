@@ -100,6 +100,7 @@ body {
   margin-top: 1rem;
   font-size: 1.5rem;
   text-decoration: underline;
+  text-decoration-color: $color-bg;
 }
 
 .page-head-title {
@@ -212,7 +213,8 @@ body {
 }
 
 .post-card.with-image .post-card-content {
-  opacity: 0;
+  // hide content until hover
+  // opacity: 0;
   padding: 100px 20px;
 }
 @media (max-width: 700px) {
@@ -221,13 +223,14 @@ body {
   }
 }
 
-.post-card-link:hover .post-card-content {
-  opacity: 1;
-  transition: opacity 0.3s cubic-bezier(0.33, 0, 0.2, 1);
-}
+// on hover make darker background
+// .post-card-link:hover .post-card-content {
+//   opacity: 1;
+//   transition: opacity 0.3s cubic-bezier(0.33, 0, 0.2, 1);
+// }
 
 .post-card-title {
-  color: #ffffff;
+  color: $color-bg;
   margin: 0;
   display: inline-block;
   font-size: 3.4rem;
@@ -430,7 +433,7 @@ body {
   padding: 20px;
   max-width: 100%;
   border: $color-bg-bright 1px solid !important;
-  color: $color-body-font;
+  color: $color-bg;
   font-size: 1.4rem;
   line-height: 1.5em;
   background: $color-bg-dark !important;

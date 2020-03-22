@@ -354,7 +354,8 @@ a {
 
 a:hover {
     text-decoration: underline;
-    transition: 0.2s ease;
+    text-decoration-color: $color-bg;
+    transition: 0.1s ease;
 }
 
 h1,
