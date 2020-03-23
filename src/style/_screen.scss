@@ -72,7 +72,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 13vw 0;
+  padding: 5vw 0;
   max-width: 70%;
   margin: auto;
   text-align: center;
@@ -131,8 +131,8 @@ body {
   }
 }
 
-
-
+// /* Landing Page
+// /* ---------------------------------------------------------- */
 
 
 // /* Post Feed / Post Card on Index page
@@ -145,6 +145,7 @@ body {
 }
 
 .post-card {
+  margin: 25px 200px;
   position: relative;
   flex: 1 1 50%;
   display: flex;
@@ -155,6 +156,9 @@ body {
   background-size: cover;
   overflow: hidden;
   counter-increment: posts;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
+  // box-shadow: 1px 1px 1px 1px $color-border-light;
+  border-radius: 2px;
 }
 
 @media (max-width: 700px) {
@@ -185,25 +189,51 @@ body {
   left: 0;
   color: $color-bg;
   text-decoration: none;
-  background: rgba(0, 0, 0, 0.1);
-  opacity: 1;
-  transition: opacity 0.5s cubic-bezier(0.33, 0, 0.2, 1);
+  // background: rgba(0, 0, 0, 0.2);
+  background: white; 
+  // opacity: 1;
+  // transition: opacity 0.5s cubic-bezier(0.33, 0, 0.2, 1);
+  &:hover {
+    // background: rgba(0, 0, 0, 0.6);
+    transition: opacity 0.3s cubic-bezier(0.33, 0, 0.2, 1)
+  }
+  img {
+    height: 190px;
+    width: 700px;
+    object-fit: cover;
+  }
 }
 
 .post-card-date,
 .post-card-body,
 .post-card-tag-link {
   font-size: 1.6rem;
-  color: $color-sub-base;
+  color: $color-border-light;
+}
+
+.post-card-tag {
+  padding-bottom: 10px;
+}
+
+.post-card-tag-link {
+  &:hover {
+    font-weight: bold;
+    color: $color-sub-base-light;
+  }
 }
 
 .post-card-readmore {
   margin-top: 11.2px;
   font-size: 1.6rem;
+  color: $color-sub-base-light;
+  &:hover {
+    // text-decoration: underline;
+    font-weight: bold;
+  }
 }
 
 .post-card-body {
-  margin-top: 16.8px;
+  margin-top: 10px;
 }
 
 .post-card-date {
@@ -211,14 +241,56 @@ body {
   font-style: italic;
 }
 
+/* Posts with images */
+///////////////////////////////////////////
 .post-card.with-image .post-card-content {
   // hide content until hover
   // opacity: 0;
   padding: 100px 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  // padding: 4vw;
+  padding: 24px;
+  flex-direction: column;
 }
 @media (max-width: 700px) {
   .post-card.with-image .post-card-content {
     opacity: 1;
+  }
+}
+@media (max-width: 1200px) {
+  .post-card .post-card-title {
+    font-size: 3.4rem;
+  }
+  .post-card .post-card-date,
+  .post-card .post-card-body,
+  .post-card .post-card-readmore,
+  .post-card .post-card-tag-link {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 940px) {
+  /* .post-card .post-card-date, */
+  .post-card .post-card-body,
+  .post-card .post-card-readmore {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .post-card:before {
+    font-size: 50vw;
+  }
+  /* .post-card .post-card-date, */
+  .post-card .post-card-body,
+  .post-card .post-card-readmore {
+    display: block;
+  }
+}
+@media (max-width: 430px) {
+  /* .post-card .post-card-date, */
+  .post-card .post-card-body,
+  .post-card .post-card-readmore {
+    display: none;
   }
 }
 
@@ -230,16 +302,23 @@ body {
 }
 
 .post-card-title {
-  color: $color-bg;
+  color: $color-body-font;
+  padding-top: 10px;
   margin: 0;
   display: inline-block;
-  font-size: 3.4rem;
+  font-size: 2.4rem;
   // max-width: 70%; 
   text-align: center;
   transition: all 0.3s cubic-bezier(0.33, 0, 0.2, 1);
+
+  &:hover {
+    // text-decoration: underline;
+    font-weight: bold;
+  }
 }
 
 /* Posts without images */
+////////////////////////////////////////////////////////////
 .post-card.no-image:before {
   display: block;
   content: counter(posts);
@@ -250,7 +329,7 @@ body {
   line-height: 1em;
   font-weight: $color-body-font;
   letter-spacing: -0.1em;
-  font-family: $font-serif;
+  font-family: $font-muli;
   color: rgba(0, 0, 0, 0.2);
 }
 
@@ -472,7 +551,8 @@ body {
   width: 1px;
   height: 30px;
   background: $color-body-font;
-  box-shadow: $color-body-font 0 0 5px;
+  // box-shadow: $color-body-font 0 0 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
   transform: rotate(45deg);
   @include light-mode {
     background: $color-body-font-light;
