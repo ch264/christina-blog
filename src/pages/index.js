@@ -23,7 +23,7 @@ const BlogIndex = ({data}) => {
       
       {description && (
         <header className="page-head">
-          <h1>🦄</h1>
+          <span role="img" aria-label="unicorn">🦄</span>
           <h2 className="page-head-title">
             {description}
 
