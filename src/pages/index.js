@@ -52,6 +52,8 @@ const BlogIndex = ({data}) => {
           postCounter++
           const slug = node.fields.slug;
           return (
+            <>
+            
             <div>
               <PostCard 
                 key={slug}
@@ -60,6 +62,7 @@ const BlogIndex = ({data}) => {
                 postClass={`post`} 
                 />
             </div>
+            </>
             )
           })
         }
