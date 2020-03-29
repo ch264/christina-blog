@@ -9,6 +9,9 @@
 
 .site-foot a {
   color: $color-body-font;
+  &:hover {
+    font-weight: bold;
+  }
   @include light-mode {
     color: $color-body-font-light;
   }
