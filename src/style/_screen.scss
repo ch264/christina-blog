@@ -455,7 +455,11 @@ body {
 
 .post-content-body {
   font-size: 1.9rem;
-  line-height: 1.65em;
+  line-height: 1.78;
+  a {
+    color: $color-body-font;
+    text-decoration: underline;
+  }
 }
 @media (max-width: 500px) {
   .post-content-body {

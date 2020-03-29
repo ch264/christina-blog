@@ -95,11 +95,3 @@ export const blogPageQuery = graphql`
 		}
 	}
 `
-
-// {
-// 	childImageSharp {
-// 		fluid(maxWidth: 1360) {
-// 			...GatsbyImageSharpFluid
-// 		}
-// 	}
-// }
