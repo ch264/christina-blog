@@ -1,9 +1,9 @@
 ---
 title: "GitHub Actions Markdown lint Setup"
 date: "2019-10-29"
-thumbnail: "./paper-bird.jpeg"
+thumbnail: "./images/paper-bird.jpeg"
 description: "This is a tutorial to show you how I set up GitHub Actions for Markdown linting with David Ansons’s Markdownlint library."
-tags: [JavaScript, GithubActions, Linter]
+tags: [JavaScript, GithubActions, Linter, Markdown]
 
 ---
 

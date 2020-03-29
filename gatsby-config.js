@@ -1,13 +1,24 @@
 // Join all arguments together and normalize the resulting url
 // const urljoin = require("url-join")
-// const siteConfig = require("./siteConfig")
+const siteConfig = require("./siteConfig")
+require('dotenv').config({
+  path: `.env.${process.env.GATSBY_ACTIVE_ENV}`,
+});
+
+
 
 module.exports = {
   siteMetadata: {
-    title: `Christina's Blog`,
-    description: `Learn and code with me.`,
+    title: siteConfig.name,
+    description: siteConfig.description,
     siteUrl: `https://www.christinahastenrath.com`,
-    author: `Christina Hastenrath`,
+    author: siteConfig.author,
+    image: ``,
+    twitterUsername: `@etTinchen`,
+    social: {
+      twitter: siteConfig.twitter,
+      github: siteConfig.github,
+    },
   },
   plugins: [
     'gatsby-plugin-sass',
@@ -70,13 +81,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
+        name: `Christina Codes`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon-96x96.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -88,6 +99,29 @@ module.exports = {
         // whitelist: ['whitelist'], // Don't remove this selector
         ignore: ['/ignored.css', 'prismjs/', '/prism.css', 'docsearch.js/'], // Ignore files/folders
         purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
+      },
+    },
+    'gatsby-plugin-sitemap',
+    // {
+    //   resolve:  'gatsby-plugin-sitemap',
+      // options: {
+      //   exclude: ['/thankyou/', '/frontmatter', '/content/*']
+      // },
+    // },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://covid-19-apis.postman.com/',
+        sitemap: 'https://covid-19-apis.postman.com/sitemap.xml',
+        resolveEnv: () => process.env.GATSBY_ACTIVE_ENV,
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+          },
+          production: {
+            policy: [{ userAgent: '*', allow: '/' }],
+          },
+        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

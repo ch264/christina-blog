@@ -9,14 +9,18 @@ class BlogPostTemplate extends React.Component {
 	render() {
 		const post = this.props.data.markdownRemark;
 		const siteTitel = this.props.data.markdownRemark.title;
-		const { title, thumbnail, description } = post.frontmatter;
-
+		const { title, thumbnail, description, tags } = post.frontmatter;
+		const image = post.frontmatter.image
+      ? post.frontmatter.image.childImageSharp.resize
+      : null
 
 		return (
 			<Layout title={siteTitel}>
 				<SEO 
-					title={"hi"} 
+					title={siteTitel} 
 					description={post.frontmatter.description || post.excerpt}
+					keywords={tags}
+					image={image}
 				/>
 				<article
 					className={`post-content ${thumbnail || `no-image`}`}
@@ -74,8 +78,14 @@ export const blogPageQuery = graphql`
 				title
 				date(formatString: "MMMM DD, YYYY")
 				description
+				tags
 				thumbnail {
           childImageSharp {
+						resize(width: 1200) {
+              src
+              height
+              width
+            }
             fluid(maxWidth: 1360) {
               ...GatsbyImageSharpFluid
             }

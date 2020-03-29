@@ -18,12 +18,12 @@ const BlogIndex = ({data}) => {
   
   return (
     <Layout>
-      <SEO title="Home" keywords={[`devlog`, `blog`, `gatsby`, `javascript`, `react`]} />
+      <SEO title="Home" keywords={[`devlog`, `blog`, `gatsby`, `javascript`, `react`, `Algolia`]} />
       {/* <Bio /> */}
       
       {description && (
         <header className="page-head">
-          <span role="img" aria-label="unicorn">🦄</span>
+          <h1><span role="img" aria-label="unicorn">🦄</span></h1> 
           <h2 className="page-head-title">
             {description}
 
@@ -106,24 +106,4 @@ export const indexQuery = graphql`
   }
 `
 
-
-// query {
-//   allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-//     edges {
-//       node {
-//         excerpt
-//         fields {
-//           slug
-//         }
-//         frontmatter {
-//           date(formatString: "MMMM D, YYYY")
-//           title
-//           description
-//           tags
-//           thumbnail 
-//         }
-//       }
-//     }
-//   }
-// }
 export default BlogIndex
