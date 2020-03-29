@@ -3,7 +3,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import SEO from "../components/Seo"
 import PostCard from "../components/PostCard";
 
 class TagPageTemplate extends React.Component {
