@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import SEO from '../components/SEO';
+import SEO from '../components/Seo';
 
 import '../style/normalize.css';
 import '../style/_all.scss';
