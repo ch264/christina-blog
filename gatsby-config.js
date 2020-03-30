@@ -127,5 +127,18 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
+    `gatsby-plugin-feed`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: siteConfig.name,
+        short_name: siteConfig.shortName,
+        start_url: siteConfig.prefix,
+        background_color: `#ffffff`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/favicon-96x96.png`,
+      },
+    },
   ],
 }
