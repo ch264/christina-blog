@@ -65,22 +65,22 @@ const Header = ({ siteTitle }) => {
           >
             Twitter
           </a>
-          <a
+          {/* <a
             href="https://stackoverflow.com/users/11683537/c-dev"
             title="StackOverflow"
             target="_blank"
             rel="noopener noreferrer"
           >
             StackOverflow
-          </a>
-          <a
+          </a> */}
+          {/* <a
             href="https://www.instagram.com/ta_teki/"
             title="Twitter"
             target="_blank"
             rel="noopener noreferrer"
           >
             Instagram
-          </a>
+          </a> */}
           <Link
             to={`/rss.xml`}
             title="RSS"
