@@ -10,8 +10,8 @@ Welcome to my Blog. This is my first blog that I build and here is the Tech stac
 ## What Gatsby starter did you use? 
 
 I used different elements from two Gatsby starters: 
-https://www.gatsbyjs.org/starters/jooplaan/gatsby-london-night-and-day/
-https://www.gatsbyjs.org/starters/vaporwavy/gatsby-london-after-midnight/
+   * https://www.gatsbyjs.org/starters/jooplaan/gatsby-london-night-and-day/
+   * https://www.gatsbyjs.org/starters/vaporwavy/gatsby-london-after-midnight/
 
 ## What is your blog about? 
 
