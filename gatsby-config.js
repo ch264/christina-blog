@@ -11,7 +11,7 @@ module.exports = {
   siteMetadata: {
     title: siteConfig.name,
     description: siteConfig.description,
-    siteUrl: `https://www.christinahastenrath.com`,
+    siteUrl: `https://www.codewithchristina.com`,
     author: siteConfig.author,
     image: ``,
     twitterUsername: `@etTinchen`,
@@ -111,8 +111,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://covid-19-apis.postman.com/',
-        sitemap: 'https://covid-19-apis.postman.com/sitemap.xml',
+        host: 'https://www.codewithchristina.com',
+        sitemap: 'https://www.codewithchristina.com/sitemap.xml',
         resolveEnv: () => process.env.GATSBY_ACTIVE_ENV,
         env: {
           development: {
