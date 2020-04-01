@@ -53,8 +53,7 @@ const BlogIndex = ({data}) => {
           const slug = node.fields.slug;
           return (
             <>
-            
-            <div>
+            <div key={Math.random()}>
               <PostCard 
                 key={slug}
                 count={postCounter}
