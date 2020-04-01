@@ -80,7 +80,9 @@
   letter-spacing: 1px;
   overflow: hidden;
 	text-overflow: ellipsis;
-	
+	@media (max-width: 375px) {
+    padding: 0px;
+  }
 	// mixin - do we want this? 
   @include light-mode {
     color: $color-body-font-light;
