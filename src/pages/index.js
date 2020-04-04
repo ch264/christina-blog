@@ -18,19 +18,18 @@ const BlogIndex = ({data}) => {
   
   return (
     <Layout>
-      <SEO title="Home" keywords={[`devlog`, `blog`, `gatsby`, `javascript`, `react`, `Algolia`]} />
+      <SEO title="Home" keywords={[`devlog`, `blog`, `gatsby`, `javascript`, `react`, `algolia`, `aws`]} />
       {/* <Bio /> */}
       
       {description && (
         <header className="page-head">
           <h1><span role="img" aria-label="unicorn">🦄</span></h1> 
           <h2 className="page-head-title">
-            {description}
-
+            Hi there do you love coding as much as me?
           </h2>
           <br></br>
           <p>
-            Hello friend! My name is Christina and I am a scientist turned Developer. I have been working as a Software Engineer and teaching myself coding and debugging skills.
+            Hi and welcome to my blog. My name is Christina and I am a scientist turned Developer. I have been working as a Software Engineer and teaching myself coding and debugging skills.
             <br/>
             <br/>
             Coding, I run into many challanges on a daily basis so I created this blog to give back to the community. Seriously, if you are just starting out, you are not alone. We are all here to help each other.
@@ -52,7 +51,6 @@ const BlogIndex = ({data}) => {
           postCounter++
           const slug = node.fields.slug;
           return (
-            <>
             <div key={Math.random()}>
               <PostCard 
                 key={slug}
@@ -61,7 +59,6 @@ const BlogIndex = ({data}) => {
                 postClass={`post`} 
                 />
             </div>
-            </>
             )
           })
         }

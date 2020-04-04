@@ -140,7 +140,7 @@ body {
 
 .post-feed {
   display: flex;
-  align-items: center;
+  // align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -149,6 +149,7 @@ body {
   // margin: 25px 200px;
   // max-height: 400px !important;
   max-width: 600px !important;
+  // height: 520px !important;
   margin: 25px;
 
   position: relative;
@@ -171,6 +172,13 @@ body {
     margin: 5px;
     flex: 1 1 100%;
     // height: 70vw;
+  }
+}
+
+@media(min-width: 1380px) {
+  .post-card {
+    max-width: 700px !important;
+    min-height: 453px !important;
   }
 }
 

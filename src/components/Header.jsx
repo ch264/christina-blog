@@ -28,6 +28,7 @@ const Header = ({ siteTitle }) => {
         </a>
 
         <nav id="swup" className="header-left">
+          {/* jsx-a11y/no-noninteractive-element-to-interactive-role */}
           <ul className="nav" role="menu">
             <li className="nav-link" role="menuitem">
               <Link to={`/`}>Home</Link>
@@ -81,14 +82,14 @@ const Header = ({ siteTitle }) => {
           >
             Instagram
           </a> */}
-          <Link
+          {/* <Link
             to={`/rss.xml`}
             title="RSS"
             target="_blank"
             rel="noopener noreferrer"
           >
             RSS
-          </Link>
+          </Link> */}
           <a
             href="https://github.com/ch264/christina-blog"
             title="GitHub"
