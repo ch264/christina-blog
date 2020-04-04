@@ -28,6 +28,7 @@ const Header = ({ siteTitle }) => {
         </a>
 
         <nav id="swup" className="header-left">
+          {/* jsx-a11y/no-noninteractive-element-to-interactive-role */}
           <ul className="nav" role="menu">
             <li className="nav-link" role="menuitem">
               <Link to={`/`}>Home</Link>

@@ -6,7 +6,7 @@ import SEO from "../components/Seo"
 
 const SecondPage = () => (
   <Layout>
-    <SEO title="Page two" />
+    <SEO title="about Code With Christina" />
     <h1>Welcome to the about page</h1>
     <p>This page is under construction</p>
     <div className="row">
