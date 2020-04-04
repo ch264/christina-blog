@@ -1,7 +1,7 @@
 {
-  "name": "my-blog",
+  "name": "code-with-christina",
   "private": true,
-  "description": "My blog to share what I learn and discover",
+  "description": "Christina shared coding and debugging tips and tricks",
   "version": "0.1.0",
   "author": "Christina Hastenrath",
   "dependencies": {
@@ -9,6 +9,7 @@
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.45",
     "gatsby-plugin-feed": "^2.4.1",
+    "gatsby-plugin-google-analytics": "^2.2.2",
     "gatsby-plugin-manifest": "^2.3.1",
     "gatsby-plugin-offline": "^3.0.32",
     "gatsby-plugin-postcss": "^2.1.21",
