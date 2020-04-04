@@ -81,7 +81,7 @@
   letter-spacing: 1px;
   overflow: hidden;
   text-overflow: ellipsis;
-  z-index: 200;
+  z-index: 999999 !important;
 	@media (max-width: 375px) {
     font-size: 1.5rem;
   }
