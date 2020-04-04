@@ -68,7 +68,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-postcss`,
+      resolve: `gatsby-plugin-postcss`, 
       options: {
         postCssPlugins: [
           require("postcss-easy-import")(),
