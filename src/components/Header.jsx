@@ -81,14 +81,14 @@ const Header = ({ siteTitle }) => {
           >
             Instagram
           </a> */}
-          <Link
+          {/* <Link
             to={`/rss.xml`}
             title="RSS"
             target="_blank"
             rel="noopener noreferrer"
           >
             RSS
-          </Link>
+          </Link> */}
           <a
             href="https://github.com/ch264/christina-blog"
             title="GitHub"

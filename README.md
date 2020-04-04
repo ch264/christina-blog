@@ -1,4 +1,4 @@
-# Chritina Codes Blog
+# Code with Christina Blog
 
 Welcome to my Blog. This is my first blog that I build and here is the Tech stack that I chose:
 
