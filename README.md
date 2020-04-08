@@ -22,3 +22,6 @@ Let me know what you think.
 Please also feel free to contribute to my blog. A contribution doc is in progress.
 
 Happy Hacking! 
+
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9bc9a0ef-55f9-417b-9cb5-67c8a64341b1/deploy-status)](https://app.netlify.com/sites/confident-mirzakhani-d9eac7/deploys)

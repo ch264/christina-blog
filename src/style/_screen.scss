@@ -25,6 +25,11 @@
 /* Main - Theme styles
 /* ---------------------------------------------------------- */
 
+main {
+  @media(max-width: 411px) {
+    padding-top: 30px;
+  }
+}
 body {
   font-family: $font-muli;
   background: $color-bg;

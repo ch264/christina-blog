@@ -81,7 +81,8 @@
   letter-spacing: 1px;
   overflow: hidden;
   text-overflow: ellipsis;
-  z-index: 200;
+  z-index: 999999 !important;
+  margin-bottom: 40px !important;
 	@media (max-width: 375px) {
     font-size: 1.5rem;
   }
@@ -214,6 +215,7 @@
     display: flex;
     justify-content: left;
     width: 186px;
+    margin-bottom: 40px !important;
   }
   .header-right {
     order: 3;
