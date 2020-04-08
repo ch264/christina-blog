@@ -15,7 +15,6 @@ class TagPageTemplate extends React.Component {
 
 		return (
 			<Layout title={siteTitle}>
-				{console.log("props in tags teamplate ........", props)}
 				<SEO title="tags"/>
 				<header className="tag-page-head">
 					<h1 className="page-head-title">

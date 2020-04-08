@@ -81,6 +81,9 @@ body {
   max-width: 70%;
   margin: auto;
   text-align: center;
+  @media (max-width: 411px) {
+    margin: 100px 50px;
+  }
 }
 
 .error-head {
