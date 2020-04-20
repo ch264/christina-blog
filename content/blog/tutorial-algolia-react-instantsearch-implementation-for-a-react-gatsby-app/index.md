@@ -340,7 +340,7 @@ onClickOut = () => {
 
 7. Lastly we style our Sarchbox and Hits. You can style them by adding classNames or referencing Algolia’s classNames and adding our own styling by overwriting the default style. This is what our css looks like for SearchBox:
 
-```js
+```css
 .searchbox {
 
   input {
@@ -365,7 +365,7 @@ onClickOut = () => {
 
 8. The last thing is to include is of course IE11 support for Aloglia in our `seo.jsx` file. We pass the script in the Gatsby Helmet.
 
-```js
+```html
 <Helmet>
   {/* Algolia IE11 support */}
 

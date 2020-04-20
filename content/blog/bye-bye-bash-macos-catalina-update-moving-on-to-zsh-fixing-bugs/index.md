@@ -15,31 +15,31 @@ I upgraded to the new OS Catalina, which now uses zsh instead of bash.
 
 To install szh run:
 
-```
+```bash
 chsh -s /bin/zsh
 ```
 
 I received this error when trying to do ‘git branch’:
 
-```
+```bash
 xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
 ```
 
 In order to fix it I ran:
 
-```
+```bash
 xcode-select --install
 ```
 
 The problem is that one has to explicitly agree to the license agreement. If that does not work try:
 
-```
+```bash
 xcode-select --reset
 ```
 
 If your terminal yells at you to use sudo, you can run the following command, which will ask you for your password:
 
-```
+```bash
 sudo xcode-select --reset
 ```
 

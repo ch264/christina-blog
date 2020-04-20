@@ -532,7 +532,7 @@ body {
   line-height: 1em;
   font-weight: 400 !important;
   /* background: $color-bg; */
-  background: var($color-bg-dark) !important;
+  background: #272822 !important;
   border-radius: 3px !important;
 }
 
@@ -549,7 +549,7 @@ body {
   color: $color-bg;
   font-size: 1.4rem;
   line-height: 1.5em;
-  background: $color-bg-dark !important;
+  background: #272822 !important;
   border-radius: 5px;
   @include light-mode {
     color: $color-body-font-light;

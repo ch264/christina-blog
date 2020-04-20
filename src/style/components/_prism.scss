@@ -1,7 +1,12 @@
 /**
+* Mix of 2 themes: 
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
  * @author ocodia
+
+ * Prism: Lightweight, robust, elegant syntax highlighting
+ * MIT license http://www.opensource.org/licenses/mit-license.php/
+ * @author Lea Verou http://lea.verou.me
  */
 
 code[class*="language-"],
@@ -63,26 +68,31 @@ pre[class*="language-"] {
 	opacity: 0.7;
 }
 
+.token.string,
 .token.property,
 .token.tag,
-.token.constant,
+// .token.constant,
 .token.symbol,
 .token.deleted {
-	color: rgb(255, 55, 95);
+	// color: rgb(255, 55, 95);
+	color:#FD971F;
 }
 
 .token.boolean,
 .token.number {
-	color: rgb(191, 90, 242);
+	// color: rgb(191, 90, 242);
+	color: #FA2672;
 }
 
 .token.selector,
 .token.attr-name,
-.token.string,
+// .token.string,
+.token.constant,
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: rgb(50, 215, 75);
+	// color: rgb(50, 215, 75);
+	color: #A6E22D;
 }
 
 .token.operator,
@@ -98,11 +108,13 @@ pre[class*="language-"] {
 .token.attr-value,
 .token.function,
 .token.class-name {
-	color: rgb(255, 214, 10);
+	// color: rgb(255, 214, 10);
+	color:#D4CA6C;
 }
 
 .token.keyword {
-	color: rgb(10, 132, 255);
+	// color: rgb(10, 132, 255);
+	color:#67D9EF;
 }
 
 .token.regex,
