@@ -29,13 +29,13 @@ Go!
 
 2. Run (only install dotenv if you are not using it already):
 
-```
+```bash
 $ gatsby-plugin-algolia react-instantsearch-dom dotenv
 ```
 
 3. Add your API keys to the .env.production file (these are just example keys. Our actual keys are stored in GitHub secrets in the Repo)
 
-```
+```bash
 GATSBY_ALGOLIA_APP_ID = KA4OJA9KAS
 GATSBY_ALGOLIA_SEARCH_KEY=lkjas987ef923ohli9asj213k12n59a
 ALGOLIA_ADMIN_KEY = lksa09sadkj1230asd09dfvj12309aj
@@ -43,7 +43,7 @@ ALGOLIA_ADMIN_KEY = lksa09sadkj1230asd09dfvj12309aj
 
 4. Add the following code to your *gatsby-config.js* file:
 
-```
+```javascript
 const queries = require('./src/utils/algolia');
 
 require('dotenv').config({
@@ -72,14 +72,14 @@ plugins: [
 
 Note: you can check that the appID is being red from the _.env_ file by running:
 
-```
+```bash
 $ console.log(process.env.GATSBY_ALGOLIA_APP_ID)
 $ gatsby develop
 ```
 
 The path in gatsby-config.js should be:
 
-```
+```js
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
@@ -92,7 +92,7 @@ You can grab the data you want Algolia to index directly from the Gatsby’s Gra
 Query property: GraphQL query string
 Transformer: function takes in query data and transforms it into an array of objects that will become the Algolia index records.
 
-```
+```js
 const pageQuery = `{
 docs: allMarkdownRemark(
   filter: {
@@ -135,7 +135,7 @@ module.exports = queries
 
 5. Gatsby develop runs the server:
 
-```
+```bash
 $ Run npm: build -  builds the static page
 ```
 
@@ -159,7 +159,7 @@ Awesome! Our backend is setup, you have objects in your Algolia index, now let u
 
 In `searchPreview.jsx` you can create a custom SearchBox and define that Hits (results that come back from Algolia) are displayed only when a user types in the SearchBox. Otherwise Algolia will display all indexed results on page load by default. This is what the code looks like:
 
-```
+```js
 import React from 'react';
 import { connectSearchBox, connectHits } from 'react-instantsearch-dom';
 import './_search.scss';
@@ -209,7 +209,7 @@ We then included the Algolia SearchBox in our src/components/Header/ `Header.jsx
 
 1. Import everything from Algolia that we need
 
-```
+```js
 import algoliasearch from 'algoliasearch/lite';
 
 import { 
@@ -224,7 +224,7 @@ import { CustomHits } from '../Search/searchPreview';
 
 2. We set a state that the searchInput field is empty
 
-```
+```js
 constructor(props) {
   super(props);
   this.state = {
@@ -242,7 +242,7 @@ Algolia has several InstantSearches for various libraries and frameworks. We use
 
 In our React InstantSearch widget, I configured InstantSearch to show 5 search results max:
 
-```
+```js
 const searchClient = algoliasearch('4A5N71XH', 'bf5cf4783437b12c2dca33724c9c04');
 
 <InstantSearch
@@ -256,7 +256,7 @@ const searchClient = algoliasearch('4A5N71XH', 'bf5cf4783437b12c2dca33724c9c04')
 
 4. Now we include the actual SearchBox. At this point in time React InstantSearch has no option to remove the default submit/reset buttons, so we are hiding them with CSS. We then define an ‘onKeyUp’ event that sets the state hasInput, once the user starts typing in the SearchBox.
 
-```
+```js
 <InstantSearch
   searchClient={searchClient}
   indexName="docs"
@@ -288,7 +288,7 @@ const searchClient = algoliasearch('4A5N71XH', 'bf5cf4783437b12c2dca33724c9c04')
 
 We wrap the CustomHits widget in a div that takes the current setState as a className because the CustomHits Widget does not take classNames natively, and we want to show Hits only when a user types in the SearchBox.
 
-```
+```js
 <SearchBox
   className="searchbox"
   class="ais-SearchBox-input"
@@ -315,7 +315,7 @@ We wrap the CustomHits widget in a div that takes the current setState as a clas
 
 6. We then wrap our InstantSearch in a ClickOutHandler to close the Hits Container when the user clicks outside of the SearchResults.
 
-```
+```js
 const ClickOutHandler = require('react-onclickout');
 
 onClickOut = () => {
@@ -340,7 +340,7 @@ onClickOut = () => {
 
 7. Lastly we style our Sarchbox and Hits. You can style them by adding classNames or referencing Algolia’s classNames and adding our own styling by overwriting the default style. This is what our css looks like for SearchBox:
 
-```
+```js
 .searchbox {
 
   input {
@@ -365,7 +365,7 @@ onClickOut = () => {
 
 8. The last thing is to include is of course IE11 support for Aloglia in our `seo.jsx` file. We pass the script in the Gatsby Helmet.
 
-```
+```js
 <Helmet>
   {/* Algolia IE11 support */}
 

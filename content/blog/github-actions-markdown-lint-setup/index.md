@@ -38,13 +38,13 @@ I have set my linter to run on pull_request but you can also set it to push.
 
 5. We want to glob our files when running the Markdown linter so we use Markdownlint-cli, which uses the Markdownlint library by DavidAnson. Run the following command to create a dependency in your package.json.
 
-```
+```bash
 $ npm install markdownlint-cli
 ```
 
 6. Create a .markdownlint.yml file and pass in your configuration settings. Here is a starter code for your settings:
 
-```
+```JSON
 {
   "default": true,
   "MD003": { "style": "atx_closed" },
@@ -61,7 +61,7 @@ $ node_modules/.bin/markdownlint ./ --ignore node_modules
 Run the linter on a branch’s modified files
 If you would like to run the linter only on the branch that you would like to merge you can add the following code to your GitHub Actions workflow file
 
-```
+```bash
 ...
 
 jobs:
@@ -82,7 +82,7 @@ jobs:
 
 You will also have to create a bash script mdlint.sh
 
-```
+```bash
 #!/bin/bash
 
 files=`(git fetch origin master:master) && (git diff --name-only master)`
@@ -98,7 +98,7 @@ done
 
 You can call the script by adding it in you package.json
 
-```
+```json
 "scripts": {
     "test": "bash mdlint.sh"
   }
