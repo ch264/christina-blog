@@ -82,14 +82,16 @@
   overflow: hidden;
   text-overflow: ellipsis;
   z-index: 999999 !important;
-  margin-bottom: 40px !important;
-	@media (max-width: 375px) {
+  // margin-bottom: 40px !important;
+  
+  @media (max-width: 375px) {
     font-size: 1.5rem;
+    padding: 0px !important;
   }
 	// mixin - do we want this? 
-  @include light-mode {
-    color: $color-body-font-light;
-  }
+  // @include light-mode {
+  //   color: $color-body-font-light;
+  // }
 }
 
 .header-logo:hover {

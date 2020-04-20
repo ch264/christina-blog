@@ -16,7 +16,7 @@ This tutorial describes how you can use [Postman](https://www.postman.com/downlo
 
 First of all, I find the AWS docs quite confusing and not easy to read. Diving into the docs we found the link to [PutObject](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html) Example 1: Upload an object shows you what the call expects. Furthermore, Postman has this great feature that allows you to sign your AWS request under the hood, so that you do not have to [calculate](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html) any signatures yourself.
 
-```
+```bash
 PUT /my-image.jpg HTTP/1.1
 Host: myBucket.s3.<Region>.amazonaws.com
 Date: Wed, 12 Oct 2009 17:50:00 GMT
@@ -34,7 +34,7 @@ In order to set up our request and auth in Postman, I first open up a new reques
 
 You have two options to store your bucket name and region. You can either store your S3 Bucket name and region as [global variables](https://www.youtube.com/watch?v=TU1i1CgjVR8) and call those variables in your request. This is what I did here. However, you can also just replace {{myS3BucketName}} with your bucket name directly.
 
-```
+```bash
 <name-of-my-S3-Bucket>.s3.<the-region-my-bucket-is-set-to>.amazonaws.com/<path-inside-S3/name-of-file-to-upload>
 ```
 

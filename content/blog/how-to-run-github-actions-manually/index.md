@@ -16,7 +16,7 @@ Github recently published a UI button to re-run a GitHub Actions workflow file w
 
 First, I had to setup a new workflow file in myGitHub Action Workflow, which listens for the repository dispatch event:
 
-```
+```bash
 name: manually re-running actions
 
 on: repository_dispatch
@@ -53,7 +53,7 @@ Save it and now you can call your variable in your Post Request, which we are go
 ## Testing your GitHub API Connection
 You can test your Github API Connections by running a Get request in Postman hitting this endpoint:
 
-```
+```bash
 https://api.github.com/zen
 ```
 
@@ -66,7 +66,7 @@ Now we can set the environment variables and include the access token as a [vari
 
 We then have to include an Accept header with the value:
 
-```
+```json
 application/vnd.github.everest-preview+json
 ```
 
