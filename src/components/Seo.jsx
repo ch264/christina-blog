@@ -97,6 +97,8 @@ function SEO({ description, lang, meta, title, keywords, image: metaImage, }) {
         ).concat(meta)}
     >
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,600,700,700i,800|Roboto:400,400i,700,700i,900&display=swap" rel="stylesheet"></link>
+    {/* Bootstrap */}
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossOrigin="anonymous" />
     </Helmet>
   )
 }
