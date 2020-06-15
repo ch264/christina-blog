@@ -1,99 +1,21 @@
 
 @import '../variables';
 
-.header {
-  // box-shadow: 0 5px 16px 0 rgba(0,0,0,.11);
-  z-index: 1;
-  // margin: 0 0 120px 0;
-  .header__logo {
-    margin: auto;
-    height: 50px;
-  }
+.header__logo {
+  // margin: auto;
+  // height: 50px;
+  padding: 10px;
+  color: $color-body-font;
+  background-color: $header-link;
+  font-size: 16px;
+  line-height: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  overflow: hidden;
 
-  .header__homelink {
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  .header__title {
-    vertical-align: middle;
-    margin-left: 20px;
-    color: gray;
+  &:hover { 
     text-decoration: none;
+    color: $color-body-font;
   }
-
-  .header__right-links {
-    .nav-item {
-      .nav-link {
-        text-decoration: none;
-        color: $header-link;
-        font-size: 12px;
-        font-weight: 620;
-        text-transform: uppercase;
-        white-space: nowrap;
-				padding: 16px;
-				font-family: $font-muli;
-				opacity: 0.8;
-				padding: 10px 12px;
-      .nav-link:hover {
-        text-decoration: none;
-  			opacity: 1;
-				color: $color-body-font;
-				transition: .4s ease;
-      }
-      .btn {
-        margin-bottom: 0;
-      }
-    }
-  }
-  @media (max-width: 800px) {
-		background-color: pink;
-    .animate-close {
-      animation-fill-mode: forwards;
-      overflow: hidden;
-      animation-name: closeMenu;
-      animation-duration: 0.5s;  
-    }
-    .closed {
-      overflow: hidden;
-      max-height: 0px;
-    }
-  }
-  .animate-open {
-    overflow: hidden;
-    animation-name: openMenu;
-		animation-duration: 0.5s;  
-  } 
-}
-
-@keyframes openMenu {
-  0%   {max-height: 0px;}
-  100% {max-height: 300px;}
-}
-
-@keyframes closeMenu {
-  0%   {max-height: 300px;}
-  100% {max-height: 0px;}
-}
-
-.nav-link.brand {
-	color: $color-body-font !important;
-	font-size: 2.1rem !important;
-	line-height: 1em !important;
-	font-weight: 700!important;
-	opacity: 1 !important;
-}
-// div.navbar-brand.header__brand {
-//   margin-right: 0px;
-// }
-
-// div.form-inline.header__search {
-//   padding: 0px;
-// }
-
-.navbar-toggler {
-	border: none !important;
-}
-
 }

@@ -6,7 +6,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 
-import '../style/normalize.css';
+// import '../style/normalize.css';
 import '../style/_all.scss';
 
 const TagIndex = ({ data }) => {
@@ -27,8 +27,8 @@ const TagIndex = ({ data }) => {
 			<div className="tag-container">
 				{tags.map((tag) => {
 					return(
-						<Link to={`/tags/${_.kebabCase(tag)}`} key={tag}>
-							<div className="tag-item">#{tag}</div>
+						<Link className="tag-item" to={`/tags/${_.kebabCase(tag)}`} key={tag}>
+							#{tag}
 						</Link>
 					)
 				})}

@@ -1,13 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
-
-
 import Layout from "../components/Layout"
-// import Img from "../components/image"
 import SEO from "../components/Seo"
 import PostCard from "../components/PostCard"
 
-import "../style/normalize.css";
 import "../style/_all.scss";
 
 
@@ -25,11 +21,11 @@ const BlogIndex = ({data}) => {
         <header className="page-head">
           <h1><span role="img" aria-label="unicorn">🦄</span></h1> 
           <h2 className="page-head-title">
-            Hi there do you love coding as much as me?
+            Welcome to <br/> Code with Christina
           </h2>
           <br></br>
           <p>
-            Hi and welcome to my blog. My name is Christina and I am a scientist turned Developer. I have been working as a Software Engineer and teaching myself coding and debugging skills.
+            My name is Christina and I am a Cell and Molecular scientist turned Software Engineer. I started my coding journey with a full time coding bootcamp and am now working full time and teaching myself coding and debugging skills.
             <br/>
             <br/>
             Coding, I run into many challanges on a daily basis so I created this blog to give back to the community. Seriously, if you are just starting out, you are not alone. We are all here to help each other.
@@ -38,10 +34,10 @@ const BlogIndex = ({data}) => {
             Over time, through lots of trial and error, and learning from others, I have discovered strategies to implement and debug. I want to share them with you.
             <br/>
             <br/>
-            Check out my Blog posts below and I would love to hear from you. Let me know what you think, ask me a question or let me know if there is a better way of solving something. Learning together is the best part of the job. 
+            Check out my Blog posts below and I would love to hear from you. Let me know what you think, ask me a question or let me know if there is a better way of solving something. Learning together is the best part of being a developer. 
             <br/>
             <br/>
-            Happy Hacking! 
+            Cherio and Happy Hacking! 
             </p>
         </header>
       )}

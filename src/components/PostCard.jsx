@@ -49,13 +49,13 @@ class ContentWithImage extends Component {
 				</div>
 
 					{/* read more */}
-					<div>
+			
 					<Link to={props.node.fields.slug} className="post-card-link post-card-readmore">
 					{
 						props.node.frontmatter.description || props.node.excerpt ? ("Read more") : (null)
 					}
 					</Link>
-				</div>
+				
 				
 			</div>
 			</>
@@ -92,13 +92,11 @@ class ContentNoImage extends Component {
 				</div>
 
 			{/* read more */}
-				<div>
 					<Link to={props.node.fields.slug} className="post-card-link post-card-readmore">
 					{
 						props.node.frontmatter.description || props.node.excerpt ? ("Read more") : (null)
 					}
 					</Link>
-				</div>
 			</div> // post-card-content end
 		);
 	}

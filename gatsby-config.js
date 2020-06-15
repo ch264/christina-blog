@@ -80,17 +80,17 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-postcss`, 
-      options: {
-        postCssPlugins: [
-          require("postcss-easy-import")(),
-          require("postcss-custom-properties")({ preserve: false }),
-          require("postcss-color-function")(),
-          require("autoprefixer")({ browserlist: ["last 2 versions"] }),
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-postcss`, 
+    //   options: {
+    //     postCssPlugins: [
+    //       require("postcss-easy-import")(),
+    //       require("postcss-custom-properties")({ preserve: false }),
+    //       require("postcss-color-function")(),
+    //       require("autoprefixer")({ browserlist: ["last 2 versions"] }),
+    //     ],
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

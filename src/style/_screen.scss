@@ -10,7 +10,7 @@
 @import "_variables.scss";
 @import "components/_footer.scss";
 @import "components/_header.scss";
-@import "components/_global.scss";
+// @import "components/_global.scss";
 @import "components/_ghost.scss";
 @import "components/_lists.scss";
 @import "components/_grid.scss";
@@ -21,6 +21,7 @@
 @import "components/_hamburger.scss";
 @import "components/_animations.scss";
 @import "components/_prism.scss";
+
 
 /* Main - Theme styles
 /* ---------------------------------------------------------- */
@@ -36,10 +37,6 @@ body {
   // transition: background 0.3s ease-out;
   // transition-delay: 0.25;
 
-  @include light-mode {
-    background: $color-bg-light;
-    color: $color-base-light-inverted;
-  }
 }
 
 .img {
@@ -116,9 +113,6 @@ body {
   margin: 0;
   font-size: 4.2rem;
   color: $color-body-font;
-  @include light-mode {
-    color: $color-body-font-light;
-  }
 }
 @media (max-width: 500px) {
   .page-head-title {
@@ -227,9 +221,12 @@ body {
 }
 
 .post-card-date,
-.post-card-body,
+.post-card-body {
+  font-size: 1.2rem;
+  color: $color-border-light;
+}
 .post-card-tag-link {
-  font-size: 1.6rem;
+  font-size: 1rem;
   color: $color-border-light;
 }
 
@@ -249,8 +246,9 @@ body {
   font-size: 1.6rem;
   color: $color-sub-base-light;
   &:hover {
-    // text-decoration: underline;
+    text-decoration: underline;
     font-weight: bold;
+    color: $color-sub-base-light;
   }
 }
 
@@ -282,21 +280,21 @@ body {
 }
 @media (max-width: 1200px) {
   .post-card .post-card-title {
-    font-size: 3.4rem;
+    font-size: 1.5rem !important;
   }
   .post-card .post-card-date,
   .post-card .post-card-body,
   .post-card .post-card-readmore,
   .post-card .post-card-tag-link {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 }
 @media (max-width: 940px) {
   /* .post-card .post-card-date, */
-  .post-card .post-card-body,
-  .post-card .post-card-readmore {
-    display: none;
-  }
+  // .post-card .post-card-body,
+  // {
+  //   display: none;
+  // }
 }
 @media (max-width: 700px) {
   .post-card:before {
@@ -313,7 +311,9 @@ body {
 }
 @media (max-width: 600px) {
   .post-card .post-card-title {
-    font-size: 2.5rem;
+    font-size: 1rem !important;
+    overflow: hidden;
+    background-color: red;
   }
 }
 @media (max-width: 430px) {
@@ -336,14 +336,14 @@ body {
   padding-top: 10px;
   margin: 0;
   display: inline-block;
-  font-size: 2.4rem;
-  // max-width: 70%; 
+  font-size: 2rem;
+  max-width: 80%; 
   text-align: center;
   transition: all 0.3s cubic-bezier(0.33, 0, 0.2, 1);
 
   &:hover {
-    // text-decoration: underline;
-    font-weight: bold;
+    text-decoration: underline;
+    // font-weight: bold;
   }
 }
 
@@ -389,7 +389,7 @@ body {
   .post-card.no-image .post-card-body,
   .post-card.no-image .post-card-readmore,
   .post-card.no-image .post-card-tag-link {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 }
 @media (max-width: 940px) {
@@ -689,15 +689,10 @@ body {
 }
 
 .tag-item:hover {
-  // color: $color-bg-bright;
+  color: $color-bg-bright-light;
   background-color: $color-sub-base-light;
   transition: all 0.4s ease-out;
-  
-
-  @include light-mode {
-    color: $color-bg-bright-light;
-    background-color: $color-sub-base-light;
-  }
+  text-decoration: none !important;
 }
 
 @media (max-width: 700px) {

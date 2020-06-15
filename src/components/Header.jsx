@@ -1,114 +1,130 @@
-import { Link } from "gatsby"
+
 // import PropTypes from "prop-types"
 import React from "react"
 import '../style/components/_header.scss'
+import { Link } from "gatsby"
 
-
-class HeaderComponent extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { isToggledOn: 'unset' };
-  }
-
-
-  // toggles the hamburger menu
-  toggleMenu = () => {
-    this.setState((state) => {
-      if (state.isToggledOn === 'unset') {
-        return ({
-          isToggledOn: true,
-        });
-      }
-      return ({
-        isToggledOn: !state.isToggledOn,
-      });
-    });
-  }
-
-  render() {
-    const {
-      isToggledOn
-    } = this.state;
-
-    return (
-      <nav className="header navbar navbar-expand-xl navbar-light">
-        {console.log('this state', this.state)}
-        {/* <div className="navbar-brand header__brand">
-          <Link
-            className="header__homelink"
-            to="/"
-          >
-            <span className="header__title">Code with Christina</span>
-          </Link>
-        </div> */}
-
-        {/* hamburger toggle */}
-        <button className="navbar-toggler" type="button" onClick={this.toggleMenu}>
-          <span className="navbar-toggler-icon" />
-        </button>
-
-        <div
-          className={`header__right-links justify-content-end navbar-nav mr-auto navbar-collapse collapse show
-            ${(isToggledOn === true) ? 'animate-open' : ''}
-            ${(isToggledOn === false) ? 'animate-close' : ''}
-            ${isToggledOn === 'unset' ? 'closed' : ''}
-            `}
-          id="navbarSupportedContent"
-        >
-        <ul>
-        <li className="nav-item">
-            <Link to="/" className="nav-link">Home</Link>
-          </li>
-        </ul>
-          
-        </div>
-          {/* <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link to="/" className="nav-link">Home</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/about" className="nav-link">About</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/tags" className="nav-link">Tags</Link>
-            </li>
-          </ul> */}
-          {/* <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link to="/" className="nav-link br">Code With Christina</Link>
-            </li>
-          </ul> */}
-
-          {/* <ul className="navbar-nav">
-            <li className="nav-item">
-              <a
-              href="https://www.linkedin.com/in/christinahastenrath/"
-              title="LinkedIn"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="nav-link"
-              >            
-                LinkedIn
-              </a>
-            </li>
-            <li className="nav-item">
-              <Link to="/about" className="nav-link">Twitter</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/about" className="nav-link">GitHub</Link>
-            </li>
-          </ul> */}
-          
-        {/* </div> */}
-      </nav>
-    );
-  }
-}
 
 const Header = () => (
-  <HeaderComponent />
-);
+
+<nav className="navbar navbar-light header">
+  <Link className="header__logo" to="/">Code With Christina</Link>
+  <ul className="navbar-nav">
+      <li className="nav-item active">
+        <Link className="nav-link" to="/tags">Tags</Link>
+      </li>
+    </ul>
+</nav>
+)
+
+// class HeaderComponent extends React.Component {
+//   constructor(props) {
+//     super(props);
+
+//     this.state = { 
+//       isToggledOn: 'unset' 
+//     };
+//   }
+
+
+//   // toggles the hamburger menu
+//   toggleMenu = () => {
+//     console.log('toggleMenu')
+//     this.setState((state) => {
+//       if (state.isToggledOn === 'unset') {
+//         return ({
+//           isToggledOn: true,
+//         });
+//       }
+//       return ({
+//         isToggledOn: !state.isToggledOn,
+//       });
+//     });
+//   }
+
+//   render() {
+//     const {
+//       isToggledOn
+//     } = this.state;
+
+//     return (
+//       <nav className="header navbar navbar-expand-xl navbar-light">
+//         {console.log('this state', this.state)}
+//         {/* <div className="navbar-brand header__brand">
+//           <Link
+//             className="header__homelink"
+//             to="/"
+//           >
+//             <span className="header__title">Code with Christina</span>
+//           </Link>
+//         </div> */}
+
+//         {/* hamburger toggle */}
+//         <button className="navbar-toggler" type="button" onClick={this.toggleMenu}>
+//           <span className="navbar-toggler-icon" />
+//         </button>
+
+//         <div
+//           className={`header__right-links justify-content-end navbar-nav mr-auto navbar-collapse collapse show
+//             ${(isToggledOn === true) ? 'animate-open' : ''}
+//             ${(isToggledOn === false) ? 'animate-close' : ''}
+//             ${isToggledOn === 'unset' ? 'closed' : ''}
+//             `}
+//           id="navbarSupportedContent"
+//         >
+//         <ul>
+//         <li className="nav-item">
+//             <Link to="/" className="nav-link">Home</Link>
+//           </li>
+//         </ul>
+          
+//         </div>
+//           {/* <ul className="navbar-nav mr-auto">
+//             <li className="nav-item">
+//               <Link to="/" className="nav-link">Home</Link>
+//             </li>
+//             <li className="nav-item">
+//               <Link to="/about" className="nav-link">About</Link>
+//             </li>
+//             <li className="nav-item">
+//               <Link to="/tags" className="nav-link">Tags</Link>
+//             </li>
+//           </ul> */}
+//           {/* <ul className="navbar-nav mr-auto">
+//             <li className="nav-item">
+//               <Link to="/" className="nav-link br">Code With Christina</Link>
+//             </li>
+//           </ul> */}
+
+//           {/* <ul className="navbar-nav">
+//             <li className="nav-item">
+//               <a
+//               href="https://www.linkedin.com/in/christinahastenrath/"
+//               title="LinkedIn"
+//               target="_blank"
+//               rel="noopener noreferrer"
+//               className="nav-link"
+//               >            
+//                 LinkedIn
+//               </a>
+//             </li>
+//             <li className="nav-item">
+//               <Link to="/about" className="nav-link">Twitter</Link>
+//             </li>
+//             <li className="nav-item">
+//               <Link to="/about" className="nav-link">GitHub</Link>
+//             </li>
+//           </ul> */}
+          
+//         {/* </div> */}
+//       </nav>
+//     );
+//   }
+// }
+
+// const Header = () => (
+//   <HeaderComponent />
+// );
 
 
 export default Header;

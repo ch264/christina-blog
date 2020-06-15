@@ -12,7 +12,6 @@
     "gatsby-plugin-google-analytics": "^2.2.2",
     "gatsby-plugin-manifest": "^2.3.1",
     "gatsby-plugin-offline": "^3.1.2",
-    "gatsby-plugin-postcss": "^2.1.21",
     "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sass": "^2.1.30",
@@ -42,10 +41,7 @@
   },
   "devDependencies": {
     "prettier": "^1.19.1",
-    "autoprefixer": "^9.7.4",
-    "postcss-easy-import": "^3.0.0",
-    "postcss-color-function": "^4.1.0",
-    "postcss-custom-properties": "^8.0.10"
+    "autoprefixer": "^9.7.4"
   },
   "keywords": [
     "gatsby"
